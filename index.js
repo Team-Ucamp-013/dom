@@ -1,36 +1,25 @@
 console.log('Hola desde Js')
 
 
-let titulo = document.getElementById('titulo')
-console.log(titulo)
+function encabezado() {
+  // let encabezado = document.createElement('h1')
+  // let texto = document.createTextNode('Soy un encabezado')
+  // encabezado.appendChild(texto)
+  // encabezado.id = 'encabezado'
+  // encabezado.className = 'soy-una-clase'
+  // document.querySelector('body').appendChild(encabezado)
+  // console.log(document.getElementById('encabezado').classList)
+  let contenedor = document.querySelector('body')
 
-let subtitulo = document.getElementsByClassName('rojo')
+  contenedor.innerHTML += `<h1 id="encabezado">Soy un encabezado 2.0</h1>`
 
-console.log(subtitulo)
-
-console.log(document.getElementsByTagName('h1'))
-
-console.log(document.querySelector('h2'))
-console.log(document.querySelectorAll('h2'))
-
-
-let etiquetaDiv = document.createElement('div')
-let texto = document.createTextNode('Elemento creado con Js')
-
-etiquetaDiv.className = 'color-div'; 
-
-document.getElementById('container').appendChild(etiquetaDiv)
-
-etiquetaDiv.appendChild(texto)
-
-// document.getElementById("btn").addEventListener("click", function( event ) {
-//   console.log('soy un Click')
-//   console.log(event)
-//   event.target.innerHTML = 'Clicked!'
-// });
-
-function clicked (event) {
-  console.log('click desde la funcion')
-  alert('Hola soy un alert')
-  console.log(event)
 }
+function parrafo() {
+  let parrafo = document.createElement('h1')
+  let texto = document.createTextNode('Soy un parrafo')
+  parrafo.appendChild(texto)
+  parrafo.id = 'parrafo'
+  document.querySelector('body').appendChild(parrafo)
+  console.log(document.getElementById('parrafo').classList)
+}
+
