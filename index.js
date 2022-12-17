@@ -13,7 +13,6 @@ console.log(cat)
 // localStorage.removeItem('miGato')
 // localStorage.clear()
 
-
 function guardar() {
   let inputValue = document.getElementById('inputText').value
   let nombres = JSON.parse(localStorage.getItem('nombres')) ? JSON.parse(localStorage.getItem('nombres')) : []
@@ -31,13 +30,23 @@ function render() {
   let nombres = JSON.parse(localStorage.getItem('nombres')) ? JSON.parse(localStorage.getItem('nombres')) : [] 
   console.log(nombres)
   lista.innerHTML = ''
-  nombres.forEach(element => {
+  nombres.forEach((element, index) => {
+    console.log(index)
     lista.innerHTML += `
       <p> ${element} </p>
+      <button onclick="borrar(${index})" >x</button>
     `
   });
 }
 
+function borrar(position) {
+  let nombres = JSON.parse(localStorage.getItem('nombres')) ? JSON.parse(localStorage.getItem('nombres')) : [] 
+  console.log(nombres.splice(position, 1))
+  console.log(JSON.stringify(nombres))
+  localStorage.setItem('nombres', JSON.stringify(nombres))
+  render()
+  console.log('borrado')
+}
 
 render()
 
